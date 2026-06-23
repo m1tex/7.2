@@ -10,11 +10,7 @@
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black"/>
-            <GradientStop Color="#FF88713C" Offset="1"/>
-            <GradientStop Color="#FF786334" Offset="0.883"/>
-            <GradientStop Color="#FF335875" Offset="0.583"/>
-            <GradientStop Color="#FF4F4C5D" Offset="0.693"/>
-            <GradientStop Color="#FF072033" Offset="0.273"/>
+            <GradientStop Color="White" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -29,20 +25,20 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Name ="label2" Grid.Row ="0" Grid.Column="0" Content="Enter a decimal number" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" BorderBrush="Red"/>
-        <TextBox Name ="textBoxForInput" Grid.Row ="0" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Foreground="Red" Background="{x:Null}" BorderBrush="Red"/>
-        <GroupBox Name ="groupBoxNumSys" Header="Number System" Grid.Row="1" Grid.ColumnSpan="2" Foreground="Red" BorderBrush="Red">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <RadioButton Name ="radBtnFor2" Content="2" GroupName="Base" IsChecked="True" Margin="10,0" Foreground="Red" BorderBrush="White" Background="#FFEA0000"/>
-                <RadioButton Name ="radBtnFor8" Content="8" GroupName="Base" Margin="120,0" Foreground="Red" BorderBrush="White" Background="Red"/>
-                <RadioButton Name ="radBtnFor16" Content="16" GroupName="Base" Margin="10,0" Foreground="Red" BorderBrush="White" Background="Red"/>
+        <Label Name ="label2" Grid.Row ="0" Grid.Column="0" Content="Input:" Margin="122,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White" BorderBrush="White" Background="{x:Null}" FontSize="18" Height="37"/>
+        <TextBox Name ="textBoxForInput" Grid.Row ="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="100" Foreground="White" Background="{x:Null}" BorderBrush="White" FontSize="18"/>
+        <GroupBox Name ="groupBoxNumSys" Header="Number System" Grid.Row="1" Grid.ColumnSpan="2" Foreground="White" BorderBrush="White" FontSize="18">
+            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                <RadioButton Name ="radBtnFor2" Content="2" GroupName="Base" IsChecked="True"  Foreground="White" BorderBrush="Black" Background="White" Height="25" Width="35"/>
+                <RadioButton Name ="radBtnFor8" Content="8" GroupName="Base" Margin="100,0" Foreground="White" BorderBrush="Black" Background="White" Height="25" Width="45" HorizontalAlignment="Center"/>
+                <RadioButton Name ="radBtnFor16" Content="16" GroupName="Base"  Foreground="White" BorderBrush="Black" Background="White" Height="25" Width="50"/>
             </StackPanel>
         </GroupBox>
-        <Label Name ="label3" Grid.Row ="2" Grid.ColumnSpan="2" Content="Result" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red"/>
-        <Label Name ="labelResult" Grid.Row ="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Background="{x:Null}" Width="100" Height="30"/>
+        <Label Name ="label3" Grid.Row ="2" Grid.ColumnSpan="2" Content="Result:" Margin ="120,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" FontSize="18"/>
+        <Label Name ="labelResult" Grid.Row ="2" Grid.ColumnSpan="2" Margin ="190,-3,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" Background="{x:Null}" Width="100" Height="30" HorizontalContentAlignment="Center" FontSize="18"/>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical">
-            <Button Name ="btnDo" Content="Do" Width="70" Height="30" Margin="80, 20" HorizontalAlignment="Left" Foreground="Red" Background="{x:Null}" BorderBrush="Red" Click="DoClick"/>
-            <Button Name ="btnOk" Content="Ok" Width="70" Height="30" Margin="0, -50 ,90, 20" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Red" BorderBrush="Red" IsDefault="True" Click="okClick"/>
+            <Button Name ="btnDo" Content="Do" Width="70" Height="30" Margin="80, 20" HorizontalAlignment="Left" Foreground="Black" Background="{x:Null}" BorderBrush="Black" Click="DoClick" FontSize="18"/>
+            <Button Name ="btnOk" Content="Ok" Width="70" Height="30" Margin="0, -50 ,90, 20" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Black" BorderBrush="Black" IsDefault="True" Click="OkClick" FontSize="18"/>
 
         </StackPanel>
     </Grid>

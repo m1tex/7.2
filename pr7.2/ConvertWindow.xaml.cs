@@ -22,57 +22,54 @@ namespace pr7._2
         public ConvertWindow()
         {
             InitializeComponent();
+            label3.Visibility = Visibility.Hidden;
+            labelResult.Visibility = Visibility.Hidden;
         }
-        private int currentNumber;
-        private string currentResult;
-        private void DoClick(object sender, RoutedEventArgs e)
+        private int savedNumber;
+        private sbyte savedBase;
+        private bool isDataSaved = false;
+        private void OkClick(object sender, RoutedEventArgs e)
         {
-            bool isNumber = int.TryParse(textBoxForInput.Text, out int number);
-            if (!isNumber)
+            if (!int.TryParse(textBoxForInput.Text, out int number))
             {
                 MessageBox.Show("Please enter a valid integer", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            int baseValue;
+                sbyte baseValue;
             if (radBtnFor2.IsChecked == true)
                 baseValue = 2;
             else if (radBtnFor8.IsChecked == true)
                 baseValue = 8;
             else
                 baseValue = 16;
+            if (number < 0) MessageBox.Show("Please enter a non-negative number", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
+            {
+                savedNumber = number;
+                savedBase = baseValue;
+                isDataSaved = true;
+            }
+
+        }
+        private void DoClick(object sender, RoutedEventArgs e)
+        {
+            if (!isDataSaved)
+            {
+                MessageBox.Show("Please press 'Ok' first to convert the number", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            isDataSaved = false;
             try
             {
-                string result = Convert.ToString(number, baseValue).ToUpper();
+                string result = Convert.ToString(savedNumber, savedBase).ToUpper();
                 labelResult.Content = result;
-                currentNumber = number;
-                currentResult = result;
+                label3.Visibility = Visibility.Visible;
+                labelResult.Visibility = Visibility.Visible;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show($"Conversion error: {ex.Message}", "Error", MessageBoxButton.OK , MessageBoxImage.Error);
+                MessageBox.Show($"Conversion error {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-        private void OkClick(object sender, RoutedEventArgs e) 
-        {
-            if (string.IsNullOrEmpty(currentResult))
-            {
-                MessageBox.Show("Please press 'Do' first to convert the number", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                return; // ✅ Выходим, не закрывая окно
-            }
-
-            // ✅ Показываем подтверждение с введёнными данными
-            string baseName = GetSelectedBase().ToString();
-            string message = $"You entered: {currentNumber}\nConverted to base {baseName} = {currentResult}";
-            MessageBox.Show(message, "Confirmation", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            // ✅ Закрываем окно
-            this.Close();
-        }
-        private int GetSelectedBase()
-        {
-            if (radBtnFor2.IsChecked == true) return 2;
-            if (radBtnFor8.IsChecked == true) return 8;
-            else return 16;
         }
     }
 }

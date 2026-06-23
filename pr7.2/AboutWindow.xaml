@@ -5,20 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr7._2"
         mc:Ignorable="d"
-        Title="About" Height="400" Width="400" Background="#FFB38156"
+        Title="About" Height="400" Width="400"
         WindowStartupLocation="CenterOwner">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <StackPanel VerticalAlignment="Center" Margin="50,0,48,0" Height="225">
-            <Label Content="pr7.2" Width="100" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Content="Galov K." Width="100" Height="30" HorizontalContentAlignment="Center" Margin="0,50,0,0"/>
-            <TextBlock Background="{x:Null}" Foreground="#FF1300FF" VerticalAlignment="Center" HorizontalAlignment="Center">
-    <Hyperlink NavigateUri="mailto:galov.kirya@gmail.com"
-         RequestNavigate="Hyperlink_RequestNavigate">
-        galov.kirya@gmail.com
-    </Hyperlink>
-            </TextBlock>
+            <Label Content="pr7.2" Width="100" Height="36" Margin="0,50,0,0" HorizontalContentAlignment="Center" Foreground="White" FontSize="18"/>
+            <Label Content="Galov K." Width="100" Height="30" HorizontalContentAlignment="Center" Margin="0,0,0,0" Background="{x:Null}" Foreground="#FFFFFCFC" FontSize="18"/>
+            <TextBlock Background="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"><Hyperlink NavigateUri="https://mail.google.com/"
+         RequestNavigate="Hyperlink_RequestNavigate"><Run Text="galov.kirya@gmail.com"/></Hyperlink></TextBlock>
         </StackPanel>
-        <Button Name ="btnBack" Content="Back" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" BorderBrush="Red" Click="BackClick"/>
+        <Button Name ="btnBack" Content="Back" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" BorderBrush="White" Click="BackClick" FontSize="18" Width="70" Height="30"/>
 
     </Grid>
 </Window>

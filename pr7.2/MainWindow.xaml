@@ -15,13 +15,13 @@
     </Window.Background>
     <Grid>
         <Menu VerticalAlignment = "Top">
-            <MenuItem Header = "Menu" Foreground="Red" Background="#FF463C3C" BorderBrush="Red">
-                <MenuItem Header="Begin" Click="BeginClick"/>
-                <MenuItem Header="About" Click="AboutClick"/>
+            <MenuItem Header = "Menu" Foreground="White" Background="#FF483F3F" BorderBrush="White">
+                <MenuItem Header="Begin" Click="BeginClick" Foreground="White" Background="#FF483F3F"/>
+                <MenuItem Header="About" Click="AboutClick" Foreground="White" Background="#FF483F3F"/>
 
             </MenuItem>
         </Menu>
-        <Label Name ="label1" Content="Select a menu item to work with app" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Foreground="#FFF90000"/>
+        <Label Name ="label1" Content="Select a menu item to work with app" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}" Foreground="White"/>
 
     </Grid>
 </Window>

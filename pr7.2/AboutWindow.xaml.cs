@@ -29,9 +29,8 @@ namespace pr7._2
         {
             try
             {
-                // Открываем почтовый клиент с указанным адресом
                 Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
-                e.Handled = true; // помечаем, что событие обработано
+                e.Handled = true;
             }
             catch (Exception ex)
             {
