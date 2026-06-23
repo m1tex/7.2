@@ -12,13 +12,13 @@
             <Label Content="pr7.2" Width="100" Height="30" HorizontalContentAlignment="Center"/>
             <Label Content="Galov K." Width="100" Height="30" HorizontalContentAlignment="Center" Margin="0,50,0,0"/>
             <TextBlock Background="{x:Null}" Foreground="#FF1300FF" VerticalAlignment="Center" HorizontalAlignment="Center">
-    <Hyperlink NavigateUri="mailto:galov.kirya@gmail.com"
-         RequestNavigate="Hyperlink_RequestNavigate">
-        galov.kirya@gmail.com
-    </Hyperlink>
+                  <Hyperlink NavigateUri="galov.kirya@gmail.com"
+                       RequestNavigate="Hyperlink_RequestNavigate">
+                galov.kirya@gmail.com
+            </Hyperlink>
             </TextBlock>
         </StackPanel>
-        <Button Name ="btnBack" Content="Back" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red" BorderBrush="Red" Click="BackClick"/>
+        <Button Name ="btnBack" Content="Back" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" Click="" Background="{x:Null}" Foreground="Red" BorderBrush="Red"/>
 
     </Grid>
 </Window>

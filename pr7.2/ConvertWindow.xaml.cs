@@ -28,7 +28,7 @@ namespace pr7._2
         private void DoClick(object sender, RoutedEventArgs e)
         {
             bool isNumber = int.TryParse(textBoxForInput.Text, out int number);
-            if (isNumber)
+            if (!isNumber)
             {
                 MessageBox.Show("Please enter a valid integer", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -52,12 +52,21 @@ namespace pr7._2
                 MessageBox.Show($"Conversion error: {ex.Message}", "Error", MessageBoxButton.OK , MessageBoxImage.Error);
             }
         }
-        private void okClick(object sender, RoutedEventArgs e) 
+        private void OkClick(object sender, RoutedEventArgs e) 
         {
-            if (String.IsNullOrEmpty(currentResult))
+            if (string.IsNullOrEmpty(currentResult))
             {
                 MessageBox.Show("Please press 'Do' first to convert the number", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                return; // ✅ Выходим, не закрывая окно
             }
+
+            // ✅ Показываем подтверждение с введёнными данными
+            string baseName = GetSelectedBase().ToString();
+            string message = $"You entered: {currentNumber}\nConverted to base {baseName} = {currentResult}";
+            MessageBox.Show(message, "Confirmation", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            // ✅ Закрываем окно
+            this.Close();
         }
         private int GetSelectedBase()
         {

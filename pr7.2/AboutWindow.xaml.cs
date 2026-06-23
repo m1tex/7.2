@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace pr7._2
@@ -23,10 +25,23 @@ namespace pr7._2
         {
             InitializeComponent();
         }
-        private void Hyperlink(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
-            e.Handled = true;
+            try
+            {
+                // Открываем почтовый клиент с указанным адресом
+                Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+                e.Handled = true; // помечаем, что событие обработано
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Cannot open email client: {ex.Message}", "Error",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private void BackClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

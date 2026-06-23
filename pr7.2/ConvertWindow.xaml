@@ -41,8 +41,8 @@
         <Label Name ="label3" Grid.Row ="2" Grid.ColumnSpan="2" Content="Result" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red"/>
         <Label Name ="labelResult" Grid.Row ="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Background="{x:Null}" Width="100" Height="30"/>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical">
-            <Button Name ="btnDo" Content="Do" Width="70" Height="30" Margin="80, 20" HorizontalAlignment="Left" Foreground="Red" Background="{x:Null}" BorderBrush="Red"/>
-            <Button Name ="btnOk" Content="Ok" Width="70" Height="30" Margin="0, -50 ,90, 20" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Red" BorderBrush="Red" IsDefault="True"/>
+            <Button Name ="btnDo" Content="Do" Width="70" Height="30" Margin="80, 20" HorizontalAlignment="Left" Foreground="Red" Background="{x:Null}" BorderBrush="Red" Click="DoClick"/>
+            <Button Name ="btnOk" Content="Ok" Width="70" Height="30" Margin="0, -50 ,90, 20" HorizontalAlignment="Right" Background="{x:Null}" Foreground="Red" BorderBrush="Red" IsDefault="True" Click="okClick"/>
 
         </StackPanel>
     </Grid>
